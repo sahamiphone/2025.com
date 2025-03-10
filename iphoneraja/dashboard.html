@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Investasi Aplikasi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #76cd26;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .product-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #0073fe;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #76cd26;
+            color: white;
+            border: 2px solid #76cd26;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            width: auto;
+            margin: 10px 0;
+        }
+
+        .buy-button:hover {
+            background-color: #64b11f;
+            color: white;
+            border-color: #64b11f;
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .button-container button {
+            background-color: #0073fe;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+            width: 30%;
+        }
+
+        .button-container button:hover {
+            background-color: #72cef8;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+            padding: 20px;
+            background-color: #f4f7fc;
+            border-top: 1px solid #e1e1e1;
+        }
+
+        .footer a {
+            color: #0073fe;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* New section for the bottom buttons */
+        .bottom-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding: 10px 0;
+        }
+
+        .bottom-buttons a {
+            background-color: transparent;
+            color: #000000;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            border: 2px solid #6efa2d; /* Tambahkan border */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bottom-buttons a:hover {
+            background-color: #3ee73e;
+            color: white;
+            border-color: #aae49b;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .product-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .button-container button {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+
+            .button-container button {
+                width: 100%;
+            }
+
+            .buy-button {
+                width: 80%;
+            }
+
+            .navbar {
+                padding: 10px;
+            }
+
+            .product-card {
+                padding: 15px;
+            }
+
+            .product-card h3 {
+                font-size: 18px;
+            }
+
+            .price {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>Investasi</h1>
+</div>
+
+<div class="container">
+    <h2>INVESTASI PT.APPLE Tbk</h2>
+    <div class="product-list">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="8plus.jpeg" alt="Produk 1">
+            <h3>IPHONE 8 PLUS</h3>
+            <p class="price">Harga: IDR 65,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 25,400</p>
+            <p>Total Pendapatan IDR 381,000</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli1.html'">Investasi Sekarang</button>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="xr.jpeg" alt="Produk 2">
+            <h3>IPHONE XR</h3>
+            <p class="price">Harga: IDR 210,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 78,600</p>
+            <p>Total Pendapatan IDR 1,179,000</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli2.html'">Investasi Sekarang</button>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="11.jpeg" alt="Produk 3">
+            <h3>IPHONE 11</h3>
+            <p class="price">Harga: IDR 820,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 290,700</p>
+            <p>Total Pendapatan IDR 4,360,500</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli3.html'">Investasi Sekarang</button>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="12mini.jpeg" alt="Produk 4">
+            <h3>IPHONE 12</h3>
+            <p class="price">Harga: IDR 1,370,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 385,200</p>
+            <p>Total Pendapatan IDR 5,778,000</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli4.html'">Investasi Sekarang</button>
+        </div>
+        <!-- Product 5 -->
+        <div class="product-card">
+            <img src="13.jpeg" alt="Produk 5">
+            <h3>IPHONE 13</h3>
+            <p class="price">Harga: IDR 2,350,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 612,500</p>
+            <p>Total Pendapatan IDR 9,187,500</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli5.html'">Investasi Sekarang</button>
+        </div>
+        <!-- Product 6 -->
+        <div class="product-card">
+            <img src="14.jpeg" alt="Produk 6">
+            <h3>IPHONE 14</h3>
+            <p class="price">Harga: IDR 5,220,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 893,900</p>
+            <p>Total Pendapatan IDR 13,408,500</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli6.html'">Investasi Sekarang</button>
+        </div>
+        <div class="product-card">
+            <img src="15.jpeg" alt="Produk 5">
+            <h3>IPHONE 15</h3>
+            <p class="price">Harga: IDR 6,550,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 1,159,167</p>
+            <p>Total Pendapatan IDR 17,387,505</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli7.html'">Investasi Sekarang</button>
+        </div>
+        <!-- Product 6 -->
+        <div class="product-card">
+            <img src="15promax.jpeg" alt="Produk 6">
+            <h3>IPHONE 15 promax</h3>
+            <p class="price">Harga: IDR 8,430,000</p>
+            <p>Masa Sewa: 15 Hari</p>
+            <p>Pendapatan Harian IDR 1,373,867</p>
+            <p>Total Pendapatan IDR 20,608,005</p>
+            <p>TARIK HARIAN TANPA DIKUNCI</p>
+            <button class="buy-button" onclick="window.location.href='beli8.html'">Investasi Sekarang</button>
+        </div>
+    </div>
+
+    <div class="bottom-buttons">
+        <a href="dashboard.html">INVESTASI</a>
+        <a href="hadiah.html">HADIAH BONUS</a>
+        <a href="pusat-akun.html">AKUN</a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 PT.APPLE Tbk hak cipta dilindungi</p>
+    </div>
+</div>
+
+</body>
+</html>
+

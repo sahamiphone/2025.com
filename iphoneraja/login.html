@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('backgroundapple2.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 8px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #0073fe;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Login</h1>
+    <div class="form-group">
+        <label for="phone">Nomor HP</label>
+        <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor HP">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Kata Sandi</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi">
+    </div>
+
+    <div class="button-container">
+        <button id="loginButton" class="button" disabled onclick="redirectToNextPage()">Login</button>
+    </div>
+
+    <div class="footer">
+        <p>Masukkan nomor HP dan kata sandi untuk melanjutkan.</p>
+    </div>
+</div>
+
+<script>
+    const phoneInput = document.getElementById('phone');
+    const passwordInput = document.getElementById('password');
+    const loginButton = document.getElementById('loginButton');
+
+    // Fungsi untuk memeriksa apakah semua input sudah diisi
+    function validateInputs() {
+        if (phoneInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+            loginButton.disabled = false; // Aktifkan tombol login
+        } else {
+            loginButton.disabled = true; // Nonaktifkan tombol login
+        }
+    }
+
+    // Tambahkan event listener untuk input
+    phoneInput.addEventListener('input', validateInputs);
+    passwordInput.addEventListener('input', validateInputs);
+
+    // Fungsi untuk mengarahkan ke halaman berikutnya
+    function redirectToNextPage() {
+        window.location.href = "dashboard.html"; // Ganti "beranda.html" dengan halaman tujuan
+    }
+</script>
+
+</body>
+</html>

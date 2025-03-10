@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Investasi PT Apple Tbk</title>
+    <style>
+        /* Gaya umum untuk body dan latar belakang */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('backgroundapple2.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Kontainer utama */
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* Gaya untuk judul */
+        .container h1 {
+            color: #1a1a1a;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Gaya untuk deskripsi singkat */
+        .container p {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Gaya untuk tombol */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 12px 20px;
+            border-radius: 6px;
+            background-color: #0073fe;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .button:hover:not(:disabled) {
+            background-color: #005bb5;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 480px) {
+            .button {
+                font-size: 0.9em;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Selamat Datang</h1>
+    <p>Selamat datang di Aplikasi Investasi PT Apple Tbk. Bergabunglah bersama kami untuk pengalaman investasi yang modern dan terpercaya.</p>
+    <div class="button-container">
+        <button id="registerButton" class="button" onclick="redirectToRegister()">Daftar</button>
+        <button id="loginButton" class="button" onclick="redirectToLogin()">Login</button>
+    </div>
+</div>
+
+<script>
+    function redirectToRegister() {
+        // Alihkan ke halaman selanjutnya setelah pendaftaran
+        window.location.href = "daftar.html"; // Ganti dengan halaman tujuan Anda
+        
+        // Aktifkan tombol Login setelah pendaftaran
+        const loginButton = document.getElementById('loginButton');
+        loginButton.disabled = false; // Mengaktifkan tombol Login
+    }
+
+    function redirectToLogin() {
+        // Arahkan ke halaman login
+        window.location.href = "login.html"; // Ganti dengan halaman login Anda
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Daftar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('backgroundapple2.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+        }
+
+        .container h1 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #0073fe;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.1s ease;
+        }
+
+        .button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .button:hover:not(:disabled) {
+            background-color: #005bb5;
+        }
+
+        .notification {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #0073fe;
+            border-radius: 5px;
+            background-color: #e0f7ff;
+            color: #0073fe;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Daftar Akun Baru</h1>
+    <div class="form-group">
+        <label for="phone">Nomor HP</label>
+        <input type="tel" id="phone" placeholder="Masukkan nomor HP" oninput="validateForm()">
+    </div>
+    <div class="form-group">
+        <label for="password">Kata Sandi</label>
+        <input type="password" id="password" placeholder="Masukkan kata sandi" oninput="validateForm()">
+    </div>
+    <button id="registerButton" class="button" disabled onclick="showNotification()">Daftar</button>
+    <div id="notification" class="notification">
+        Pendaftaran berhasil! Silakan login untuk melanjutkan.
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        const phone = document.getElementById('phone').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const registerButton = document.getElementById('registerButton');
+
+        // Periksa apakah nomor HP dan kata sandi tidak kosong
+        if (phone && password) {
+            registerButton.disabled = false; // Aktifkan tombol
+        } else {
+            registerButton.disabled = true; // Nonaktifkan tombol
+        }
+    }
+
+    function showNotification() {
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block'; // Tampilkan notifikasi
+
+        // Tunggu 3 detik, lalu arahkan ke halaman login
+        setTimeout(() => {
+            window.location.href = "login.html"; // Ganti dengan halaman login Anda
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>

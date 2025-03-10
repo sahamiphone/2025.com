@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Penarikan - Investasi Aplikasi</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Resetting some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        .navbar {
+            background-color: #38c233;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .input-container input, .input-container select {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .input-container input:focus, .input-container select:focus {
+            border-color: #4CAF50;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .button-container button {
+            background-color: #38c233;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .button-container button:hover {
+            background-color: #97ff82;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Penarikan Saldo</h1>
+    </div>
+    <div class="container">
+        <form id="withdrawForm">
+            <div class="input-container">
+                <label for="withdrawMethod">Metode Penarikan</label>
+                <select id="withdrawMethod" required>
+                    <optgroup label="Bank">
+                        <option value="bca">BCA</option>
+                        <option value="bcasyariah">BCA SYARIAH</option>
+                        <option value="bri">BRI</option>
+                        <option value="mandiri">Mandiri</option>
+                        <option value="bsi">BSI</option>
+                        <option value="danamon">DANAMON</option>
+                        <option value="cimb niaga">CIMB NIAGA</option>
+                        <option value="bni">BNI</option>
+                        <option value="mybank">MYBANK</option>
+                        <option value="mega">BANK MEGA SYARIAH</option>
+                        <option value="permata">BANK PERMATA</option>
+                        <option value="sinarmas">BANK SINARMAS</option>
+                        <option value="bukopin">BUKOPIN</option>
+                    </optgroup>
+                    <optgroup label="E-Wallet">
+                        <option value="gopay">GoPay</option>
+                        <option value="ovo">OVO</option>
+                        <option value="dana">DANA</option>
+                        <option value="linkaja">LINKAJA</option>
+                        <option value="shopeepay">SHOPEEPAY</option>
+                        <option value="doku">DOKU</option>
+                        <option value="octo">OCTO MOBILE</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="accountNumber">Nomor Rekening/E-Wallet</label>
+                <input type="text" id="accountNumber" placeholder="Masukkan nomor rekening atau akun e-wallet" required pattern="\d{8,16}">
+            </div>
+            <div class="input-container">
+                <label for="accountName">Nama Pemilik Rekening</label>
+                <input type="text" id="accountName" placeholder="Masukkan nama pemilik rekening" required>
+            </div>
+            <div class="input-container">
+                <label for="withdrawAmount">Jumlah Penarikan</label>
+                <input type="number" id="withdrawAmount" placeholder="Masukkan jumlah yang ingin ditarik" required min="30000">
+            </div>
+            <div class="button-container">
+                <button type="button" id="submitButton">
+                    <span class="material-icons">account_balance_wallet</span> Tarik Saldo
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const method = document.getElementById('withdrawMethod').value;
+            const accountNumber = document.getElementById('accountNumber').value;
+            const accountName = document.getElementById('accountName').value;
+            const amount = document.getElementById('withdrawAmount').value;
+
+            // Validasi dasar
+            if (amount < 0) {
+                alert("Jumlah penarikan minimal adalah Rp40.000.");
+            } else if (!method || !accountNumber || !accountName) {
+                alert("Harap isi semua data dengan benar.");
+            } else {
+                alert("saldo anda tidak mencukupi untuk melakukan penarikan.");
+            }
+        });
+    </script>
+</body>
+</html>
+
